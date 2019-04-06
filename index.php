@@ -6,7 +6,7 @@
   $package_obj = new package;
   $package = $package_obj->get_package();
 
-  include 'includes.switcher.php';
+  include 'includes/switcher.php';
   include 'includes/footer.php';
 
 ?>
