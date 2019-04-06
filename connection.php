@@ -1,5 +1,5 @@
 <?php
 
-  // What did you expect to see here?
-  
+  // What exactly did you expect here?
+
 ?>

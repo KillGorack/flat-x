@@ -25,7 +25,7 @@
     function get_package(){
       $package = array();
       if($this->app <> false){
-        $package['fieds'] = $this->fields()[0];
+        $package['fields'] = $this->fields()[0];
         $package['app'] = $this->fields()[1];
       }
       $package['qs'] = $_GET;

@@ -1,83 +1,52 @@
-<p>
 <?php
-	// ===================================================================
-	// Create array from file (For app, and its fields)
-	// ===================================================================
-    $apparray = array();
-    $fieldarray = array();
-    $counter = 0;
-    foreach (file($apppath) as $readline){
-    $pieces = explode($parsdeliminator , $readline);
-      If ($counter > 2 and $counter < 13) {
-          $apparray[] = Trim($pieces[2]);
-      }
-      If (trim($pieces[0]) == "field") {
-          $fieldarray[] = array($pieces[0], $pieces[1], $pieces[2], $pieces[3], $pieces[4], $pieces[5], $pieces[6], $pieces[7], $pieces[8], $pieces[9]);
-      }
-      If (trim($pieces[0]) == "divider") {
-          $fieldarray[] = array("divider");
-      }
-      If (trim($pieces[0]) == "heading") {
-          $fieldarray[] = array($pieces[0], $pieces[1]);
-      }
-      $counter = $counter + 1;
-    }
-	// ===================================================================
 
-
-
+      echo "<p>";
 	// ===================================================================
 	// Crack open the file, and chop it up...
 	// ===================================================================
-      $filepath = "data/records"."/".$_GET["app"]."/".$_GET["rec"].".txt";
+      $filepath = "data/records"."/".$package['qs']["app"]."/".$package['qs']["rec"].".txt";
       $readdata = fopen($filepath, 'r');
       $readline = fgets($readdata);
       fclose($readdata);
       $pieces = explode($parsdeliminator , $readline);
 	// ===================================================================
-
-
-
-	// ===================================================================
 	// Record output..
 	// ===================================================================
-      ?>
-  <div class="form_container">
-  <table border="0" cellpadding="0" cellspacing="0" width="427">
-    <?php
-        $divider = "<tr height=\"10\"><td colspan=\"2\"></td></tr><tr height=\"1\"><td colspan=\"2\" bgcolor=\"#FFFFFF\"></td></tr><tr height=\"10\"><td colspan=\"2\"></td></tr>";
-        $rowcounter = 0;
-        $fieldcount = 0;
-        foreach($fieldarray as $linearray) {
-          If (trim($fieldarray[$rowcounter][0]) == "field") {
-            $fieldcount = $fieldcount + 1;
-            If (trim($fieldarray[$rowcounter][1]) == "textarea") {
-              ?>    <tr><td colspan="2"><center><?php echo $fieldarray[$rowcounter][2]; ?></center><br><?php echo $pieces[$fieldcount]; ?></td></tr><?php
-              echo "\r\n";
-            } else {
-              ?>    <tr height="27"><td><?php echo $fieldarray[$rowcounter][2]; ?>: </td><td align="right"><?php echo $pieces[$fieldcount]; ?></td></tr><?php
-              echo "\r\n";
-            }
-          } elseif (trim($fieldarray[$rowcounter][0]) == "divider") {
-            echo "    ".$divider."<!-- Seperator -->"."\r\n";
-          } elseif (trim($fieldarray[$rowcounter][0]) == "heading") {
-            ?><tr height="27"><td colspan="2"><div class="text2"><?php echo $fieldarray[$rowcounter][1]; ?></div></td></tr><?php
-            echo "\r\n";
+      echo "<div class=\"form_container\">";
+      echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"427\">";
+      $divider = "<tr height=\"10\"><td colspan=\"2\"></td></tr><tr height=\"1\"><td colspan=\"2\" bgcolor=\"#FFFFFF\"></td></tr><tr height=\"10\"><td colspan=\"2\"></td></tr>";
+      $rowcounter = 0;
+      $fieldcount = 0;
+      foreach($package['fields'] as $linearray) {
+        if(trim($package['fields'][$rowcounter][0]) == "field"){
+          $fieldcount = $fieldcount + 1;
+          if(trim($package['fields'][$rowcounter][1]) == "textarea"){
+            echo "<tr><td colspan=\"2\"><center>".$package['fields'][$rowcounter][2]."</center><br>".$pieces[$fieldcount]."</td></tr>";
+          }else{
+            echo "<tr height=\"27\"><td>".$package['fields'][$rowcounter][2].": </td><td align=\"right\">".$pieces[$fieldcount]."</td></tr>";
           }
-          $rowcounter = $rowcounter + 1;
+        }elseif(trim($package['fields'][$rowcounter][0]) == "divider"){
+          echo $divider;
+        }elseif(trim($package['fields'][$rowcounter][0]) == "heading"){
+          echo "<tr height=\"27\"><td colspan=\"2\"><div class=\"text2\">".$package['fields'][$rowcounter][1]."</div></td></tr>";
         }
-      ?>
-    <tr height="27">
-      <td colspan=2>
-        <a href="edit.php?app=<?php echo trim($_GET["app"]) ?>&amp;rec=<?php echo $_GET["rec"]; ?>"><img src="images/edit.gif" alt="edit"></a>
-        <a href="delete.php?app=<?php echo trim($_GET["app"]) ?>&amp;rec=<?php echo $_GET["rec"]; ?>"><img src="images/drop.gif" alt="delete"></a>
-      </td>
-    </tr>
-  </table>
-  </div>
-
-
-<?php if($apparray[7] == "True") { ?>
-<?php include 'includes/exchange.php'; ?>
-<?php } ?>
-<p>
+        $rowcounter = $rowcounter + 1;
+      }
+      echo "<tr height=\"27\">";
+      echo "<td colspan=\"2\">";
+      echo "<a href=\"index.php\"><img src=\"images/edit.gif\" alt=\"edit\" style=\"margin-right:10px;\"></a>";
+      echo "<a href=\"index.php\"><img src=\"images/drop.gif\" alt=\"delete\"></a>";
+      echo "</td>";
+      echo "</tr>";
+      echo "</table>";
+      echo "</div>";
+	// ===================================================================
+  // files...
+  // ===================================================================
+      if($package['app'][7] == "True") {
+        include 'includes/exchange.php';
+      }
+  // ===================================================================
+    echo "<p>";
+    
+?>

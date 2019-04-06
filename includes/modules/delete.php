@@ -5,7 +5,7 @@ $deletetarget = "data/records"."/".$_GET["app"]."/".$_GET["rec"].".txt";
     if ($_POST["confirmdelete"] == "acknowledged") {
     unlink($deletetarget);
     echo "<div class=alert><img src=images/alert.png><hr>"."Record Deleted!, Now redirecting.."."</div>";
-    ?><meta http-equiv="refresh" content="2;URL='list.php?app=<?php echo $_GET["app"]; ?>'" /><?php
+    ?><meta http-equiv="refresh" content="0;URL='index.php?app=<?php echo $_GET["app"]; ?>&content=list'" /><?php
     }
   } else{
   echo "<div class=alert>";
