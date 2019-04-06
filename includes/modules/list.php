@@ -96,7 +96,14 @@
           }
         $cellcounter = $cellcounter + 1;
         }
-      ?>      <td style="width:30px;"><div class="text4"><a href="edit.php?app=<?php echo trim($_GET["app"]) ?>&amp;rec=<?php echo $datapieces[0]; ?>"><img src="images/edit.gif" alt="edit"></a></div></td><td  style="width:30px;"><div class="text4"><a href="delete.php?app=<?php echo trim($_GET["app"]) ?>&amp;rec=<?php echo $datapieces[0]; ?>"><img src="images/drop.gif" alt="delete"></a></div></td><?php
+      ?>
+      <td style="width:30px;">
+        <div class="text4"><a href="index.php?app=<?php echo trim($_GET["app"]) ?>&amp;rec=<?php echo $datapieces[0]; ?>&function=edit"><img src="images/edit.gif" alt="edit"></a></div>
+      </td>
+      <td  style="width:30px;">
+        <div class="text4"><a href="index.php?app=<?php echo trim($_GET["app"]) ?>&amp;rec=<?php echo $datapieces[0]; ?>&function=delete"><img src="images/drop.gif" alt="delete"></a></div>
+      </td>
+      <?php
       echo "\r\n"."    </tr>"."\r\n";
     }
 	// ===================================================================

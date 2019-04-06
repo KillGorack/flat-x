@@ -1,4 +1,3 @@
-<?php include 'includes/header.php'; ?>
 <p>
 <?php
 $deletetarget = "data/records"."/".$_GET["app"]."/".$_GET["rec"].".txt";
@@ -21,4 +20,3 @@ $deletetarget = "data/records"."/".$_GET["app"]."/".$_GET["rec"].".txt";
   }
 ?>
 </p>
-<?php include 'includes/footer.php'; ?>
