@@ -28,6 +28,7 @@
         $package['fieds'] = $this->fields()[0];
         $package['app'] = $this->fields()[1];
       }
+      $package['qs'] = $_GET;
       return $package;
     }
 

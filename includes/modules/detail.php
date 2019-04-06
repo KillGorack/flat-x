@@ -1,16 +1,5 @@
-<?php include 'includes/header.php'; ?>
 <p>
 <?php
-$apppath ="data/applications/".$_GET["app"].".dat";
-$parsdeliminator = "|*#*|";
-
-
-if (!file_exists($apppath)) {
-
-  echo "<div class=text2>No such application!</div>";
-
-} else {
-
 	// ===================================================================
 	// Create array from file (For app, and its fields)
 	// ===================================================================
@@ -36,7 +25,7 @@ if (!file_exists($apppath)) {
 	// ===================================================================
 
 
-	
+
 	// ===================================================================
 	// Crack open the file, and chop it up...
 	// ===================================================================
@@ -85,15 +74,10 @@ if (!file_exists($apppath)) {
       </td>
     </tr>
   </table>
-  </div><?php
-	// ===================================================================
-	
+  </div>
 
-	}
-?>
 
 <?php if($apparray[7] == "True") { ?>
 <?php include 'includes/exchange.php'; ?>
 <?php } ?>
 <p>
-<?php include 'includes/footer.php'; ?>

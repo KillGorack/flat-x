@@ -1,14 +1,5 @@
-<?php include 'includes/header.php'; ?>
 <p>
 <?php
-$apppath ="data/applications/".$_GET["app"].".dat";
-$parsdeliminator = "|*#*|";
-
-if (!file_exists($apppath)) {
-
-  echo "<div class=text2>No such application!</div>";
-
-} else {
 
 	// ===================================================================
 	// Create array from file
@@ -98,7 +89,7 @@ if (!file_exists($apppath)) {
     foreach($reversed  as $filecontents) {
       $datapieces = explode($parsdeliminator , $filecontents);
       $cellcounter = 0;
-      ?>    <tr onClick="location.href='detail.php?app=<?php  echo trim($_GET["app"]);?>&amp;rec=<?php  echo $datapieces[0]; ?>';" class="data"><?php
+      ?>    <tr onClick="location.href='index.php?app=<?php  echo trim($_GET["app"]);?>&amp;rec=<?php  echo $datapieces[0]; ?>&content=detail';" class="data"><?php
         foreach($datapieces  as $cellvalue) {
           If (isset($fieldarray[$cellcounter-1][6]) and trim($fieldarray[$cellcounter-1][6]) == "True" And $cellcounter > 0) {
             echo "      <td><div class=text5>".Trim($cellvalue)."</div></td>"."\r\n";
@@ -150,8 +141,6 @@ if (!file_exists($apppath)) {
     }
 	// ===================================================================
 
-}
 ?>
 
 <p>
-<?php include 'includes/footer.php'; ?>

@@ -1,0 +1,24 @@
+<?php
+
+  $fx_obj = new package;
+  $package = $fx_obj->get_package();
+
+  if(isset($package['qs']['app'])){
+    $apppath ="data/applications/".$package['qs']['app'].".dat";
+    if(!file_exists($apppath)){
+      unset($ap);
+    }else{
+      $ap = $package['qs']['app'];
+    }
+  }
+
+  if(isset($ap) and isset($package['qs']['content'])){
+    if($package['qs']['content'] == "list"){
+      include('./includes/modules/list.php');
+    }
+    if($package['qs']['content'] == "detail"){
+      include('./includes/modules/detail.php');
+    }
+  }
+
+?>

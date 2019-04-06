@@ -46,7 +46,7 @@
 
 If (isset($showlink) and $showlink == "True") {
 ?>
-<a href="list.php?app=<?php echo $varname; ?>" class="FirstNav"><?php echo $linktext; ?></a>
+<a href="index.php?app=<?php echo $varname; ?>&content=list" class="FirstNav"><?php echo $linktext; ?></a>
 <?php If (isset($_GET["app"]) and trim($_GET["app"]) == trim($varname)) { ?>
   <div class="SubMenu">
     <div class="text3"><img src="images/sb.gif" alt="bullet" height=10 width=10> <a href="list.php?app=<?php echo $varname; ?>">List view</a></div>
