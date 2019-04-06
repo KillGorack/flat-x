@@ -1,0 +1,1 @@
+00000002|*#*|Other data types please!|*#*|Dave|*#*|11/22/2013|*#*|42%|*#*|<img src=images/on.png>|*#*|<img src=images/off.png>|*#*|Text, dates, numbers, yes-no, textarea exist. Next will be working on login, timestamp among others.<br><br>Think about a progress bar progression thingie...|*#*|active

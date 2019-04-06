@@ -1,0 +1,1 @@
+00000006|*#*|Cover image upload|*#*|Dave|*#*|11/22/2013|*#*|0.0%|*#*|<img src=images/off.png>|*#*|<img src=images/off.png>|*#*|Give a record the ability to upload a cover image (mimic Dmis portal...|*#*|active

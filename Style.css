@@ -1,0 +1,239 @@
+body {
+  margin-top: 15px;
+	color: #000000; background: #989898;
+	font:14px Verdana, Arial, sans-serif;
+	text-align:center;
+}
+
+:link 	  {color: #314960; text-decoration:none;} 
+:visited 	{color: #314960; text-decoration:none;}
+a:active 	{color: #314960;}
+a:hover 	{color: #314960;}
+
+.text1  {font-size: 14px; padding: 0px; margin: 0px; color: #000000; font-weight: 400; text-align:Left;} /* Indented Paragraph */
+.text2  {font-size: 16px; padding: 0px; margin: 0px; color: #000000; font-weight: BOLD; text-align:Left;}
+.text3 {font-size: 10px; padding: 0px; font-weight: 400; text-align:Left; text-indent: 15px;}
+.text4  {font-size: 12px; padding: 0px; margin: 0px; color: #000000; font-weight: 400;  font-weight:bold;} /* Datagrid Headers */
+.text5  {font-size: 12px; padding: 0px; margin: 0px; color: #000000; font-weight: 400;} /* Datagrid Headers */
+
+.FullWrapper {
+  background-image:url('images/menuback.jpg');
+  width:1031px; /* THis is where the menuback goes.. because we want to see the entire column go down!! */
+  margin-left: auto ;
+  margin-right: auto ;
+  text-align:left;
+  }
+  
+.banner {
+  background-image:url('images/banner.jpg');
+  width:1031px;
+  height:158px;
+  }
+	
+.BottomBanner {
+  background-image:url('images/page_bottom.jpg');
+  clear:both;
+  width:1031px;
+  height:22px;
+  }
+
+.NavSpace {
+  margin-top: 4px;
+  float:left;
+  width:158px;
+  }
+	
+.InnerContentContainer {
+  margin-top: 0px;
+  Padding-top: 0px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  width:843px; /* Less than the below tags width (simply to keep edges within the frame). */
+  }
+
+.exchange_container {
+	background:#D0D0D0;
+	width:811px;
+	padding-top:15px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-bottom:10px;
+	border: 1px solid #000000;
+  }
+  
+HR {
+	width:100%;
+    border: none;
+    height: 1px;
+	background-color: #FFFFFF;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.rule1 {
+	width:100%;
+    border: none;
+	height: 1px;
+	background-color: #707C88;
+	margin-top:10px;
+	margin-bottom:10px;
+  }
+
+.form_container {
+	background:#D0D0D0;
+	width:427px;
+	padding-top:15px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-bottom:10px;
+	border: 1px solid #000000;
+  }
+  
+.alert {
+	background:#D0D0D0;
+	width:427px;
+	padding-top:15px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-bottom:10px;
+	margin-left:150px;
+	border: 1px solid #000000;
+  }
+  
+.ContentContainer {
+  float:right;
+  width:873px;
+  }
+	
+.SubMenu {
+  margin-top: -5px;
+  margin-bottom: 15px;
+  width:146px;
+  margin-left: 10px;
+  }
+
+img {
+  border: 0px;
+  }	
+
+ 
+.container {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 5px #888;
+  -moz-box-shadow: 5px 5px 5px #888;
+  box-shadow: 5px 5px 5px #888;
+  margin-Bottom: 10px;
+  border: 1px solid #000000;
+  background: #7D7D7D;
+  padding:10px;
+  overflow: hidden;
+  }
+   
+  
+  .container1 {
+  margin-Top:15px;
+  margin-Bottom:15px;
+  text-align:left;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  background: #9F9F9F;
+  padding:4px;
+  }
+
+  .container2 {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0px;
+  background: #7A7A7A;
+  padding:10px;
+  }
+  
+.FirstNav {
+	Width: 114px;
+	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bdbdbd), color-stop(1, #858585) );
+	background:-moz-linear-gradient( center top, #bdbdbd 5%, #858585 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bdbdbd', endColorstr='#858585');
+	background-color:#bdbdbd;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:15px;
+	border:1px solid #2b2b2b;
+	display:inline-block;
+	color:#FFFFFF;
+	font-family:Verdana;
+	font-size:12px;
+	font-weight:bold;
+	padding:4px 8px;
+	text-decoration:none;
+	text-shadow:1px 1px 2px #404040;
+	text-align:center;
+	margin-Left: 10px;
+	margin-Bottom: 10px;
+}.FirstNav:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #858585), color-stop(1, #bdbdbd) );
+	background:-moz-linear-gradient( center top, #858585 5%, #bdbdbd 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#858585', endColorstr='#bdbdbd');
+	background-color:#858585;
+}.FirstNav:active {
+	position:relative;
+	top:1px;
+}
+
+table.cells {
+	width:100%;
+	border-bottom: 1px solid #4E4E4E;
+	border-top: 1px solid #4E4E4E; 
+	border-collapse: collapse;
+}
+
+table.paging {
+	margin-left:0px;
+	border: 1px solid #4E4E4E;
+	border-collapse: collapse;
+}
+
+table.bottom_info{
+	color:#314960;
+	margin-top:15px;
+	border: 0px solid #4E4E4E;
+	border-collapse: collapse;
+	font-size: 11px;
+	width:100%;
+}
+
+table.paging td{
+	text-align:center;
+	padding-top:5px;
+	padding-bottom:3px;
+	padding-left:5px;
+	padding-right:5px;
+	border: 0px solid #4E4E4E;
+	font-size: 11px;
+	width:20px;
+}
+
+table.cells td{
+	margin:0px; 
+	padding:5px; 
+	border: 0px solid #BFBFBF;
+}
+
+tr.data:nth-child(even) {background: #AEAEAE}
+tr.data:nth-child(odd) {background: #C4C4C4}
+
+td.topper {
+	background-image:url('images/topper.png');
+}
+
+tr.data:hover { 
+  background-color: #707C88; color: #000;
+  cursor: pointer;
+}

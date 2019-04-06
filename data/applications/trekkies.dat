@@ -1,0 +1,30 @@
+=========================================================================================================
+ ACF Ver 0.002
+=========================================================================================================
+Parameter|*#*|Var Name			  |*#*|trekkies|*#*|
+Parameter|*#*|Human Name		  |*#*|-=Star Trek=-|*#*|
+Parameter|*#*|App Enabled		  |*#*|True|*#*|
+Parameter|*#*|Access View?		|*#*|True|*#*|
+Parameter|*#*|Access Edit?		|*#*|True|*#*|
+Parameter|*#*|Access Add?		  |*#*|True|*#*|
+Parameter|*#*|Access Delete?	|*#*|True|*#*|
+Parameter|*#*|Enable Upload		|*#*|True|*#*|
+Parameter|*#*|Rows on list		|*#*|15|*#*|
+Parameter|*#*|Overflow			  |*#*|25|*#*|
+=========================================================================================================
+ Field Information
+ FieldType|HumanName|VariableName|Maxlength|Required|OnIndex|OnDetail|Selection|Unique|UseLogin|TimeStamp
+=========================================================================================================
+heading|*#*|Episode information.|*#*|
+divider|*#*|
+field|*#*|text|*#*|Title|*#*|title|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|text|*#*|Series|*#*|series|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|number|*#*|Season|*#*|season|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|number|*#*|Episode|*#*|episode|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|text|*#*|Star Date|*#*|stardate|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|text|*#*|Director|*#*|director|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|text|*#*|Written|*#*|author|*#*|255|*#*|True|*#*|False|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|date|*#*|Air Date|*#*|airdate|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+divider|*#*|
+field|*#*|textarea|*#*|Synopsys|*#*|synopsys|*#*|1024|*#*|True|*#*|False|*#*|True|*#*|False|*#*|False|*#*|
+divider|*#*|

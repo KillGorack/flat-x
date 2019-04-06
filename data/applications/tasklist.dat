@@ -1,0 +1,29 @@
+======================================================================================
+ ACF Ver 0.002 (Parameters are position dependant...)
+======================================================================================
+Parameter|*#*|Var Name*			  |*#*|tasklist|*#*|
+Parameter|*#*|Human Name*		  |*#*|Task List|*#*|
+Parameter|*#*|App Enabled		  |*#*|True|*#*|
+Parameter|*#*|Access View?		|*#*|True|*#*|
+Parameter|*#*|Access Edit?		|*#*|True|*#*|
+Parameter|*#*|Access Add?		  |*#*|True|*#*|
+Parameter|*#*|Access Delete?	|*#*|True|*#*|
+Parameter|*#*|Enable Upload		|*#*|False|*#*|
+Parameter|*#*|Rows on list		|*#*|15|*#*|
+Parameter|*#*|Overflow			  |*#*|25|*#*|
+======================================================================================
+ Field Information
+ FieldType|HumanName|VariableName|Maxlength|Required|OnIndex|OnDetail|Selection|Unique
+======================================================================================
+heading|*#*|Task details..|*#*|
+divider|*#*|
+field|*#*|text|*#*|Task Title|*#*|title|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|text|*#*|Responsible|*#*|resp|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|date|*#*|Due Date|*#*|duedate|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|text|*#*|Completion|*#*|completion|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+divider|*#*|
+field|*#*|yes-no|*#*|Started?|*#*|started|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|yes-no|*#*|Completed?|*#*|completed|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+divider|*#*|
+field|*#*|textarea|*#*|Notes|*#*|notes|*#*|1024|*#*|True|*#*|False|*#*|True|*#*|False|*#*|False|*#*|
+divider|*#*|

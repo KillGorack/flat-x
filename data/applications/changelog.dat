@@ -1,0 +1,22 @@
+======================================================================================
+ ACF Ver 0.002 (Parameters are position dependant...)
+======================================================================================
+Parameter|*#*|Var Name*			  |*#*|changelog|*#*|
+Parameter|*#*|Human Name*		  |*#*|Change Log|*#*|
+Parameter|*#*|App Enabled		  |*#*|True|*#*|
+Parameter|*#*|Access View?		|*#*|True|*#*|
+Parameter|*#*|Access Edit?		|*#*|True|*#*|
+Parameter|*#*|Access Add?		  |*#*|True|*#*|
+Parameter|*#*|Access Delete?	|*#*|True|*#*|
+Parameter|*#*|Enable Upload		|*#*|True|*#*|
+Parameter|*#*|Rows on list		|*#*|15|*#*|
+Parameter|*#*|Overflow			  |*#*|25|*#*|
+======================================================================================
+ Field Information
+ FieldType|HumanName|VariableName|Maxlength|Required|OnIndex|OnDetail|Selection|Unique
+======================================================================================
+heading|*#*|Change details.|*#*|
+divider|*#*|
+field|*#*|text|*#*|Feature Name|*#*|feature|*#*|50|*#*|True|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+field|*#*|yes-no|*#*|Approved?|*#*|approval|*#*|50|*#*|False|*#*|True|*#*|True|*#*|False|*#*|False|*#*|
+divider|*#*|

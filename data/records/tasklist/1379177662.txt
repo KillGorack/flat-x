@@ -1,0 +1,1 @@
+1379177662|*#*|Finish delete component|*#*|Dave|*#*|11/22/2013|*#*|50%|*#*|<img src=images/on.png>|*#*|<img src=images/off.png>|*#*|Delete function for records is complete, however if there are files uploaded they are currently NOT deleted.<br><br>The goal is when a record is deleted all files, and secondary data is deleted along with it.|*#*|active
