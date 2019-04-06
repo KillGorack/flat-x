@@ -1,107 +1,74 @@
-<?php include 'includes/header.php'; ?>
+
 <p>
 <?php
-$apppath ="data/applications/".$_GET["app"].".dat";
-$parsdeliminator = "|*#*|";
-
-if (!file_exists($apppath)) {
-
-  ?><div class="text2">No such application!</div><?php
-
-} else {
-
-	// ===================================================================
-	// Create array from file (For app, and its fields)
-	// ===================================================================
-    $apparray = array();
-    $fieldarray = array();
-    $counter = 0;
-    foreach (file($apppath) as $readline){
-    $pieces = explode($parsdeliminator , $readline);
-      If ($counter > 2 and $counter < 13) {
-          $apparray[] = Trim($pieces[2]);
-      }
-      If (trim($pieces[0]) == "field") {
-          $fieldarray[] = array($pieces[0], $pieces[1], $pieces[2], $pieces[3], $pieces[4], $pieces[5], $pieces[6], $pieces[7], $pieces[8], $pieces[9]);
-      }
-      If (trim($pieces[0]) == "divider") {
-          $fieldarray[] = array("divider");
-      }
-      If (trim($pieces[0]) == "heading") {
-          $fieldarray[] = array($pieces[0], $pieces[1]);
-      }
-      $counter = $counter + 1;
-    }
-	// ===================================================================
-
 
   if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
 
     // ===================================================================
     // Putting the form post through some critical observation.
     // ===================================================================
-      $stopforerror = "False";
-      $errormessage = "";
-      foreach($fieldarray as $linearray) {
-        If (trim($linearray[5]) == "True" And trim($_POST[trim($linearray[3])]) == ""){
-          $stopforerror = "True";
-          $errormessage = $errormessage."Sorry [".$linearray[2]."] is required<br>";
-        }
-        If ($_POST[trim($linearray[3])] <> "") {
-          If (trim($linearray[1]) == "number" And !is_numeric($_POST[trim($linearray[3])])) {
-            $stopforerror = "True";
-            $errormessage = $errormessage."Sorry [".$linearray[2]."] is required to be numeric<br>";
+        $stopforerror = "False";
+        $errormessage = "";
+        foreach($package['fields'] as $linearray) {
+          if(count($linearray) > 3){
+            if(trim($linearray[5]) == "True" And trim($_POST[trim($linearray[3])]) == ""){
+              $stopforerror = "True";
+              $errormessage = $errormessage."Sorry [".$linearray[2]."] is required<br>";
+            }
+            if($_POST[trim($linearray[3])] <> "") {
+              if(trim($linearray[1]) == "number" And !is_numeric($_POST[trim($linearray[3])])) {
+                $stopforerror = "True";
+                $errormessage = $errormessage."Sorry [".$linearray[2]."] is required to be numeric<br>";
+              }
+            }
+            if($_POST[trim($linearray[3])] <> "") {
+              if(trim($linearray[1]) == "date" And strtotime($_POST[trim($linearray[3])]) == false) {
+                $stopforerror = "True";
+                $errormessage = $errormessage."[".$linearray[2]."] is required to be in date format<br>";
+              }
+            }
           }
         }
-        // date
-        If ($_POST[trim($linearray[3])] <> "") {
-          If (trim($linearray[1]) == "date" And strtotime($_POST[trim($linearray[3])]) == false) {
-            $stopforerror = "True";
-            $errormessage = $errormessage."[".$linearray[2]."] is required to be in date format<br>";
-          }
-        }
-      }
     // ===================================================================
 
 
-    if($stopforerror == "True") {
+    if($stopforerror == "True"){
 
       echo "<div class=alert><img src=images/alert.png><hr>".$errormessage."</div>";
 
-    } else {
+    }else{
 
 		// ===================================================================
 		// Directory creation, getting a filecount, generating filename.
 		// ===================================================================
-      $datapath = "data/records"."/".$apparray[0];
-			if (!file_exists($datapath)) {
-				mkdir($datapath, 0755, true);
-			}
-      $filename = date('U');
-      $filenameext = ".txt";
+        $datapath = "data/records"."/".$package['app'][0];
+  			if (!file_exists($datapath)) {
+  				mkdir($datapath, 0755, true);
+  			}
+        $filename = date('U');
+        $filenameext = ".txt";
 		// ===================================================================
 		// Building data to write, filter, removing breaks, and the like..
 		// ===================================================================
-			$recordcontents = $filename.$parsdeliminator;
-			foreach($fieldarray as $linearray) {
-        If ($linearray[0] == "field") {
-        $str = str_replace("\n", '<br>', $_POST[trim($linearray[3])]);
-          $recordcontents = $recordcontents.$str.$parsdeliminator;
-        }
-			}
+  			$recordcontents = $filename.$parsdeliminator;
+  			foreach($package['fields'] as $linearray) {
+          If ($linearray[0] == "field") {
+          $str = str_replace("\n", '<br>', $_POST[trim($linearray[3])]);
+            $recordcontents = $recordcontents.$str.$parsdeliminator;
+          }
+  			}
 		// ===================================================================
 		// Write the file
 		// ===================================================================
-			$ourFileName = $datapath."/".$filename.$filenameext;
-			$ourFileHandle = fopen($ourFileName, 'w') or die("can't open file");
-			fwrite($ourFileHandle, $recordcontents."active");
-			fclose($ourFileHandle);
+  			$ourFileName = $datapath."/".$filename.$filenameext;
+  			$ourFileHandle = fopen($ourFileName, 'w') or die("can't open file");
+  			fwrite($ourFileHandle, $recordcontents."active");
+  			fclose($ourFileHandle);
 		// ===================================================================
 
 		echo "<div class=alert><img src=images/alert.png><hr>"."Work done, redirecting"."</div>";
 
-		?><meta http-equiv="refresh" content="1;URL='http://localhost/testing/detail.php?app=<?php echo $apparray[0]; ?>&rec=<?php echo $filename; ?>'" /> <?php
+		?><meta http-equiv="refresh" content="1;URL='index.php?app=<?php echo $package['app'][0]; ?>&rec=<?php echo $filename; ?>&content=detail'" /> <?php
 
     }
 
@@ -119,7 +86,7 @@ if (!file_exists($apppath)) {
 	// create form from array..
 	// ===================================================================
 
-    foreach($fieldarray as $linearray) {
+    foreach($package['fields'] as $linearray) {
       if(count($linearray)> 2){
         $fieldtype = trim($linearray[1]);
         $humanname = trim($linearray[2]).": ";
@@ -190,15 +157,6 @@ if (!file_exists($apppath)) {
 
 }
 
-	// ===================================================================
-	// Destroy arrays
-	// ===================================================================
-    unset($apparray);
-    unset($fieldarray );
-	// ===================================================================
-
-}
 ?>
 
 <p>
-<?php include 'includes/footer.php'; ?>

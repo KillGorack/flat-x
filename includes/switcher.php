@@ -25,6 +25,9 @@
     if($package['qs']['function'] == "delete" and isset($package['qs']['rec'])){
       include('./includes/modules/delete.php');
     }
+    if($package['qs']['function'] == "add"){
+      include('./includes/modules/add.php');
+    }
   }
 
 ?>
