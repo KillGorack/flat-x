@@ -1,4 +1,3 @@
-<?php include 'includes/header.php'; ?>
 <p>
 <?php
 
@@ -12,10 +11,10 @@
     $pieces = explode($parsdeliminator , $readline);
     $uplfilepath = $pieces[1].$pieces[2];
 	// ===================================================================
-	
 
-	
-	
+
+
+
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($_POST["confirmdelete"] == "acknowledged") {
 
@@ -24,11 +23,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
  ?>
  <div class="alert"><img src="images/alert.png"><hr>File Deleted!, Now redirecting..</div>
- <meta http-equiv="refresh" content="2;URL='detail.php?app=<?php echo $_GET["app"]; ?>&rec=<?php echo $_GET["rec"]; ?>'" />
+ <meta http-equiv="refresh" content="2;URL='index.php?app=<?php echo $_GET["app"]; ?>&rec=<?php echo $_GET["rec"]; ?>&content=detail'" />
  <?php
- 
- 
-  
+
+
+
   }
 } else {
 
@@ -47,4 +46,3 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 <p>
-<?php include 'includes/footer.php'; ?>

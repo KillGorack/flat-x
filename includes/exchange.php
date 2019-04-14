@@ -28,7 +28,7 @@
 			}
 		// ===================================================================
 
-		
+
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
   $temp = explode(".", $_FILES["file"]["name"]);
   if ($_FILES["file"]["error"] > 0){
@@ -38,16 +38,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $filetype = $_FILES["file"]["type"];
     $filesize = (round($_FILES["file"]["size"] / 1024 / 1024, 3))." MB";
     if (file_exists($filepath."/".$_FILES["file"]["name"])){
-    
+
 ?>
 <script type="text/vbscript">
 MsgBox "<?php echo $_FILES["file"]["name"] . " already exists, probably should delete the existing file and try again ;0)"; ?>"
 </script>
 <?php
 
-      
+
     }else{
-      
+
 		// ===================================================================
 		// Creating string for datafile..
 		// ===================================================================
@@ -76,7 +76,7 @@ MsgBox "<?php echo $_FILES["file"]["name"] . " already exists, probably should d
       $filepath."/".$_FILES["file"]["name"]);
       $datacounter = $datacounter + 1;
 		// ===================================================================
-		
+
     }
   }
 }
@@ -111,11 +111,11 @@ if ($datacounter > 0) {
       <td><div class=text5><?php echo $pieces[3]; ?></div></td>
       <td><div class=text5><?php echo $pieces[4]; ?></div></td>
       <td style="width:30px;"><div class=text5><a href="<?php echo $pieces[1]; ?><?php echo $pieces[2]; ?>"><img src="images/download.png"></a></div></td>
-      <td style="width:30px;"><div class=text5><a href="filedelete.php?app=<?php echo $_GET["app"]; ?>&rec=<?php echo $_GET["rec"]; ?>&file=<?php echo $pieces[0]; ?>"><img src="images/drop.gif"></a></div></td>
+      <td style="width:30px;"><div class=text5><a href="index.php?app=<?php echo $_GET["app"]; ?>&rec=<?php echo $_GET["rec"]; ?>&file=<?php echo $pieces[0]; ?>&function=deletefile"><img src="images/drop.gif"></a></div></td>
     </tr>
-<?php     
-              
-              
+<?php
+
+
         }
       }
     }

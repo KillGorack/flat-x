@@ -25,6 +25,12 @@
     if($package['qs']['function'] == "delete" and isset($package['qs']['rec'])){
       include('./includes/modules/delete.php');
     }
+    if($package['qs']['function'] == "edit" and isset($package['qs']['rec'])){
+      include('./includes/modules/edit.php');
+    }
+    if($package['qs']['function'] == "deletefile" and isset($package['qs']['rec'])){
+      include('./includes/modules/deletefile.php');
+    }
     if($package['qs']['function'] == "add"){
       include('./includes/modules/add.php');
     }

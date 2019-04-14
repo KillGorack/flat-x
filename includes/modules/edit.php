@@ -1,9 +1,8 @@
-<?php include 'includes/header.php'; ?>
 <p>
 <?php
 $apppath ="data/applications/".$_GET["app"].".dat";
 $parsdeliminator = "|*#*|";
-date_default_timezone_set('America/New_York');
+
 
 if (!file_exists($apppath)) {
 
@@ -113,7 +112,7 @@ if (!file_exists($apppath)) {
 
 
 		echo "<div class=alert><img src=images/alert.png><hr>"."Work done, redirecting"."</div>";
-		?><meta http-equiv="refresh" content="1;URL='detail.php?app=<?php echo $apparray[0]; ?>&rec=<?php echo $_POST["ID"]; ?>'" /><?php
+		?><meta http-equiv="refresh" content="1;URL='index.php?app=<?php echo $apparray[0]; ?>&rec=<?php echo $_POST["ID"]; ?>&content=detail'" /><?php
 
     }
 
@@ -233,4 +232,3 @@ if (!file_exists($apppath)) {
 
 ?>
 <p>
-<?php include 'includes/footer.php'; ?>
