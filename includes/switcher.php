@@ -39,4 +39,8 @@
     }
   }
 
+  if(!isset($ap)){
+    include('./includes/modules/home.php');
+  }
+
 ?>

@@ -34,8 +34,8 @@
       }
       echo "<tr height=\"27\">";
       echo "<td colspan=\"2\">";
-      echo "<a href=\"index.php?app=changelog&rec=".$_GET['rec']."&function=edit\"><img src=\"images/edit.gif\" alt=\"edit\" style=\"margin-right:10px;\"></a>";
-      echo "<a href=\"index.php?app=changelog&rec=".$_GET['rec']."&function=delete\"><img src=\"images/drop.gif\" alt=\"delete\"></a>";
+      echo "<a href=\"index.php?app=".$_GET['app']."&rec=".$_GET['rec']."&function=edit\"><img src=\"images/edit.gif\" alt=\"edit\" style=\"margin-right:10px;\"></a>";
+      echo "<a href=\"index.php?app=".$_GET['app']."&rec=".$_GET['rec']."&function=delete\"><img src=\"images/drop.gif\" alt=\"delete\"></a>";
       echo "</td>";
       echo "</tr>";
       echo "</table>";
