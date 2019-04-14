@@ -16,6 +16,9 @@
     if($package['qs']['content'] == "list"){
       include('./includes/modules/list.php');
     }
+    if($package['qs']['content'] == "search"){
+      include('./includes/modules/search.php');
+    }
     if($package['qs']['content'] == "detail" and isset($package['qs']['rec'])){
       include('./includes/modules/detail.php');
     }

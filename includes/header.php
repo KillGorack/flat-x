@@ -51,7 +51,7 @@ If (isset($showlink) and $showlink == "True") {
   <div class="SubMenu">
     <div class="text3"><img src="images/sb.gif" alt="bullet" height=10 width=10> <a href="index.php?app=<?php echo $varname; ?>&content=list">List view</a></div>
     <div class="text3"><img src="images/sb.gif" alt="bullet" height=10 width=10> <a href="index.php?app=<?php echo $varname; ?>&function=add">Add A Record</a></div>
-    <div class="text3"><img src="images/sb.gif" alt="bullet" height=10 width=10> <a href="search.php?app=<?php echo $varname; ?>">Search</a></div>
+    <div class="text3"><img src="images/sb.gif" alt="bullet" height=10 width=10> <a href="index.php?app=<?php echo $varname; ?>&content=search">Search</a></div>
   </div>
 <?php } ?>
 <?php
