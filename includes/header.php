@@ -20,13 +20,14 @@
 
 	// ===================================================================
 		$parsdeliminator = "|*#*|";
-		$filepath = "Data/Applications";
+		$filepath = "data/applications";
 		date_default_timezone_set('America/New_York');
 	// ===================================================================
 
-	if ($handle = opendir('Data\Applications')) {
+	if ($handle = opendir('./data/applications')) {
 
 		while (false !== ($entry = readdir($handle))) {
+
 			if(substr($entry, -3) == "dat"){
 				$showlink = "True";
 				$filepathfull = $filepath."/".$entry;
