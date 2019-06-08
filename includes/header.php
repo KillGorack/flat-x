@@ -25,16 +25,13 @@
 	// ===================================================================
 
 	if ($handle = opendir('./data/applications')) {
-
 		while (false !== ($entry = readdir($handle))) {
-
 			if(substr($entry, -3) == "dat"){
 				$showlink = "True";
 				$filepathfull = $filepath."/".$entry;
 				$counter = 0;
 				foreach (file($filepathfull) as $readline){
 					$pieces = explode($parsdeliminator , $readline);
-
 					if ($counter == 3) {
 						$varname = $pieces[2];
 					} elseif($counter == 4) {
@@ -44,24 +41,32 @@
 				}
 			}
 			$filepathfull = "";
-
-If (isset($showlink) and $showlink == "True") {
-?>
-<a href="index.php?app=<?php echo $varname; ?>&content=list" class="FirstNav"><?php echo $linktext; ?></a>
-<?php If (isset($_GET["app"]) and trim($_GET["app"]) == trim($varname)) { ?>
-  <div class="SubMenu">
-    <div class="text3"><img src="images/sb.gif" alt="bullet" height=10 width=10> <a href="index.php?app=<?php echo $varname; ?>&content=list">List view</a></div>
-    <div class="text3"><img src="images/sb.gif" alt="bullet" height=10 width=10> <a href="index.php?app=<?php echo $varname; ?>&function=add">Add A Record</a></div>
-    <div class="text3"><img src="images/sb.gif" alt="bullet" height=10 width=10> <a href="index.php?app=<?php echo $varname; ?>&content=search">Search</a></div>
-  </div>
-<?php } ?>
-<?php
-}
-
+      If (isset($showlink) and $showlink == "True") {
+        $navi[$linktext] = array(
+          'list' => 'index.php?app='.$varname.'&content=list',
+          'add' => 'index.php?app='.$varname.'&function=add',
+          'search' => 'index.php?app='.$varname.'&function=search',
+          'show' => $showlink,
+          'var' => $varname
+        );
+      }
 		}
-
 		closedir($handle);
 	}
+
+  ksort($navi);
+
+  foreach($navi as $key => $nav){
+    echo "<a href=\"".$nav['list']."\" class=\"FirstNav\">".$key."</a>";
+    If (isset($_GET["app"]) and trim($_GET["app"]) == trim($nav['var'])) {
+      echo "<div class=\"SubMenu\">";
+      echo "<div class=\"text3\"><img src=\"images/sb.gif\" alt=\"bullet\" height=10 width=10> <a href=\"".$nav['list']."\">List</a></div>";
+      echo "<div class=\"text3\"><img src=\"images/sb.gif\" alt=\"bullet\" height=10 width=10> <a href=\"".$nav['add']."\">Add</a></div>";
+      echo "<div class=\"text3\"><img src=\"images/sb.gif\" alt=\"bullet\" height=10 width=10> <a href=\"".$nav['search']."\">Search</a></div>";
+      echo "</div>";
+    }
+  }
+
 ?>
 </div>
 <!-- Menu End -->

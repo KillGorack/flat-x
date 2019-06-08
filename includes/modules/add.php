@@ -119,7 +119,7 @@
     // Generic form field....
     // ===================================================================
         if ($fieldtype == "text" or $fieldtype == "number" or $fieldtype == "date") {
-          ?>    <tr style="height:27px;"><td><?php echo $humanname.$reqmark; ?></td><td align="right"><input type="text" name="<?php echo $variablename; ?>" maxlength="<?php echo $maxlength; ?>" size="42"></td></tr><?php
+          ?>    <tr style="height:27px;"><td><?php echo $humanname.$reqmark; ?></td><td align="right"><input type="text" name="<?php echo $variablename; ?>" maxlength="<?php echo $maxlength; ?>"></td></tr><?php
           echo "\r\n";
     // ===================================================================
     // textarea form field..

@@ -171,7 +171,7 @@ if (!file_exists($apppath)) {
         // generic form element
         // ===================================================================
               if ($fieldtype == "text" or $fieldtype == "number" or $fieldtype == "date") {
-                ?>    <tr height="27"><td><?php echo $humanname.$reqmark; ?></td><td align="right"><input value="<?php echo $piecesdata[$fieldcounter]; ?>" type="text" name="<?php echo $variablename; ?>" maxlength="<?php echo $maxlength; ?>" size="42"></td></tr><?php
+                ?>    <tr height="27"><td><?php echo $humanname.$reqmark; ?></td><td align="right"><input value="<?php echo $piecesdata[$fieldcounter]; ?>" type="text" name="<?php echo $variablename; ?>" maxlength="<?php echo $maxlength; ?>" ></td></tr><?php
                 echo "\r\n";
         // ===================================================================
         // textarea form element
