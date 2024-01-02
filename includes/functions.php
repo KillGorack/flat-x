@@ -8,6 +8,11 @@ function pre($array) {
 
 class package {
 
+    private $qs;
+    private $app;
+    private $delim;
+
+
     function __construct() {
         if (count($_GET) > 0) {
             $this->qs = $_GET;
